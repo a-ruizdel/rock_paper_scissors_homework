@@ -11,6 +11,8 @@
 <h1> user move is: <%= @user_move %> </h1>
 <h1> computer move is: <%= @computer_move %> </h1>
 <h1> outcome is: <%= @outcome %> </h1>
+<h1> counts is <%= @count_total_moves %> </h1>
+
 
 <div class="container">
   <hr>
@@ -115,8 +117,7 @@
       <div class="panel-heading">
         <h5 class="panel-title">
           Complete history
-          (11)
-        </h5>
+          (<%= @count_total_moves %>)        </h5>
       </div>
 
       <table class="table table-hover table-striped">
