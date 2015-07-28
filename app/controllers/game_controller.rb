@@ -50,6 +50,21 @@ class GameController < ApplicationController
     @all_moves = Move.all
 
     @count_total_moves = Move.count
+    @count_totuser_wins = Move.where(:user_wins=> 1).count
+    @count_totuser_lose = Move.where(:computer_wins=> 1).count
+    @count_totuser_tie = Move.where(:tie=> 1).count
+
+    @count_rock_win = Move.where(:user_move=> "rock").where(:user_wins=> 1).count
+    @count_rock_lose = Move.where(:user_move=> "rock").where(:computer_wins=> 1).count
+    @count_rock_tie = Move.where(:user_move=> "rock").where(:tie=> 1).count
+
+    @count_paper_win = Move.where(:user_move=> "paper").where(:user_wins=> 1).count
+    @count_paper_lose = Move.where(:user_move=> "paper").where(:computer_wins=> 1).count
+    @count_paper_tie = Move.where(:user_move=> "paper").where(:tie=> 1).count
+
+    @count_scissors_win = Move.where(:user_move=> "scissors").where(:user_wins=> 1).count
+    @count_scissors_lose = Move.where(:user_move=> "scissors").where(:computer_wins=> 1).count
+    @count_scissors_tie = Move.where(:user_move=> "scissors").where(:tie=> 1).count
 
 
     render ("games/move.html.erb")

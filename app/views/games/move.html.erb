@@ -12,7 +12,8 @@
 <h1> computer move is: <%= @computer_move %> </h1>
 <h1> outcome is: <%= @outcome %> </h1>
 <h1> counts is <%= @count_total_moves %> </h1>
-
+<h1> rock and user wins <%= @count_rock_win %></h1>
+<h1> rock and user ties <%= @count_rock_tie %></h1>
 
 <div class="container">
   <hr>
@@ -84,30 +85,30 @@
 
         <tr>
           <td>rock</td>
-          <td>3</td>
-          <td>0</td>
-          <td>1</td>
+          <td><%= @count_rock_win %></td>
+          <td><%= @count_rock_lose %></td>
+          <td><%= @count_rock_tie %></td>
         </tr>
 
         <tr>
           <td>paper</td>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
+          <td><%= @count_paper_win %></td>
+          <td><%= @count_paper_lose %></td>
+          <td><%= @count_paper_tie %></td>
         </tr>
 
         <tr>
           <td>scissors</td>
-          <td>1</td>
-          <td>2</td>
-          <td>2</td>
+          <td><%= @count_scissors_win %></td>
+          <td><%= @count_scissors_lose %></td>
+          <td><%= @count_scissors_tie %></td>
         </tr>
 
         <tr>
           <th>Total</th>
-          <th>4</th>
-          <th>3</th>
-          <th>4</th>
+          <th><%= @count_totuser_wins %></th>
+          <th><%= @count_totuser_lose %></th>
+          <th><%= @count_totuser_tie %></th>
         </tr>
       </table>
     </div>
