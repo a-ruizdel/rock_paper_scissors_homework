@@ -34,11 +34,15 @@ class GameController < ApplicationController
     if @outcome == "won"
       m.user_wins = 1
       m.computer_wins = 0
+      m.tie = 0
     elsif @outcome == "lost"
       m.user_wins = 0
       m.computer_wins = 1
+      m.tie = 0
     elsif @outcome == "tied"
       m.tie = 1
+      m.computer_wins = 0
+      m.user_wins = 0
     else
       m.user_wins = 0
       m.computer_wins = 0
@@ -46,6 +50,7 @@ class GameController < ApplicationController
     end
 
     m.save
+
 
     @all_moves = Move.all
 
